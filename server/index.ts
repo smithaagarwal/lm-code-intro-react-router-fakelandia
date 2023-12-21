@@ -4,7 +4,7 @@ import { Server } from 'http';
 import { initialiseRoutes } from './routes/routes';
 import { printNewLine } from './helpers/helpers';
 
-const PORT = 8080;
+const PORT = 3000;
 
 try {
 	printNewLine();
