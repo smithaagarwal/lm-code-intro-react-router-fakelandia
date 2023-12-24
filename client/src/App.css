@@ -9,3 +9,7 @@
   padding: 1rem 5rem;
   background: #ffffff;
 }
+
+nav a.active {
+  color: red;
+}
