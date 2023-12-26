@@ -14,6 +14,7 @@ const MisdemeanoursHeader: React.FC<MisdemeanoursHeaderProp> = ({
         Misdemeanour
         <SelectMisdemeanour filterMisdemeanours={filterMisdemeanours} />
       </th>
+      <th scope="col">Punishment Idea</th>
     </tr>
   </>
 );
