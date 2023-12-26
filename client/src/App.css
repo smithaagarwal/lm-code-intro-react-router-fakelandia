@@ -2,6 +2,8 @@
 
 .App {
   text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .header {
@@ -20,4 +22,49 @@ td {
   padding: 0.5rem 1rem;
   min-width: 20rem;
   border-right: 1px solid black;
+}
+
+.form__intro {
+  color: var(--dark);
+  font-family: cursive;
+  font-size: 1.3rem;
+  width: 80%;
+}
+
+.form__text {
+  color: var(--dark);
+  font-family: cursive;
+  font-size: 1.5rem;
+  margin: 0.2em;
+}
+
+.form__label {
+  min-width: 40%;
+}
+
+.form__input {
+  min-width: 50%;
+}
+.form__field {
+  display: block;
+  float: right;
+  width: 55%;
+  padding: 0.3rem 0rem;
+}
+.form__textarea {
+  float: right;
+  width: 75%;
+  padding: 0.3rem 0rem;
+}
+
+input {
+  font: 1.4em/1.5em "handwriting", cursive, sans-serif;
+  padding: 0px 10px;
+  width: 40%;
+}
+
+textarea {
+  font: 1.4em/1.5em "handwriting", cursive, sans-serif;
+  padding: 0px 10px;
+  width: 68%;
 }
