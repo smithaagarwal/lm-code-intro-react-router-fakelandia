@@ -25,10 +25,11 @@ td {
 }
 
 .form__intro {
+  text-align: center;
   color: var(--dark);
   font-family: cursive;
   font-size: 1.3rem;
-  width: 80%;
+  margin: auto;
 }
 
 .form__text {
@@ -46,25 +47,32 @@ td {
   min-width: 50%;
 }
 .form__field {
-  display: block;
-  float: right;
-  width: 55%;
-  padding: 0.3rem 0rem;
 }
 .form__textarea {
-  float: right;
+  margin-left: auto;
+  margin-right: 0;
   width: 75%;
   padding: 0.3rem 0rem;
 }
 
 input {
-  font: 1.4em/1.5em "handwriting", cursive, sans-serif;
+  font: 0.8em "handwriting", cursive, sans-serif;
   padding: 0px 10px;
   width: 40%;
 }
 
 textarea {
+  font: 0.8em "handwriting", cursive, sans-serif;
+  padding: 5px 10px;
+}
+.form__button {
   font: 1.4em/1.5em "handwriting", cursive, sans-serif;
-  padding: 0px 10px;
-  width: 68%;
+  position: relative;
+  left: 20%;
+}
+
+.form {
+  font: 1.4em/1.5em "handwriting", cursive, sans-serif;
+  width: 80%;
+  margin: 5%;
 }

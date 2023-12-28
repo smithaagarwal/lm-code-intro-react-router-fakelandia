@@ -6,9 +6,7 @@ const Subject: React.FC<SubjectProps> = ({ subject, onChangeSubject }) => {
   return (
     <>
       <div className="form__field">
-        <label className="form__text form__label" htmlFor="subject">
-          Subject
-        </label>
+        <label htmlFor="subject">Subject</label>
         <input
           type="text"
           id="subject"

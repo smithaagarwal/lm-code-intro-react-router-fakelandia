@@ -5,9 +5,7 @@ export interface ReasonProps {
 const Reason: React.FC<ReasonProps> = ({ reason, onChangeReason }) => (
   <>
     <div className="form__field">
-      <label className="form__text form__label" htmlFor="reason">
-        Reason for contact:
-      </label>
+      <label htmlFor="reason">Reason for contact:</label>
       <select
         id="reason"
         name="reason"

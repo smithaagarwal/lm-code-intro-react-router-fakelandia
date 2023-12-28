@@ -4,9 +4,8 @@ export interface DetailsProps {
 }
 const Details: React.FC<DetailsProps> = ({ details, onChangeDetails }) => (
   <>
-    <div className="form__textarea ">
+    <div className="form__field">
       <textarea
-        className=""
         id="details"
         name="details"
         value={details}
