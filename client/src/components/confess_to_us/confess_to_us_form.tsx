@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Subject from "./subject";
 import Reason from "./reason";
 import Details from "./details";
@@ -10,6 +10,14 @@ const ConfessToUsForm: React.FC = () => {
   const [subject, setSubject] = useState<string>("");
   const [reason, setReason] = useState<string>("");
   const [details, setDetails] = useState<string>("");
+  const allValuesCorrect = useMemo(
+    () =>
+      validateSubject(subject).length === 0 &&
+      validateDetails(details).length === 0 &&
+      validateReason(reason).length === 0,
+    [subject, reason, details]
+  );
+
   return (
     <>
       <div>
@@ -38,7 +46,11 @@ const ConfessToUsForm: React.FC = () => {
             onChangeDetails={(value) => setDetails(value)}
             validate={validateDetails}
           />
-          <button className="form__button" type="submit" disabled>
+          <button
+            className="form__button"
+            type="submit"
+            disabled={!allValuesCorrect}
+          >
             Confess
           </button>
         </form>
