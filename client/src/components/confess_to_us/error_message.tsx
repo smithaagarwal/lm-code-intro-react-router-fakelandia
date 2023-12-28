@@ -4,8 +4,10 @@ export interface ErrorMessageProps {
 const ErrorMessage: React.FC<ErrorMessageProps> = ({ messages }) =>
   messages && messages.length > 0 ? (
     <>
-      {messages.map((message) => (
-        <div className="error__message">{message}</div>
+      {messages.map((message, i) => (
+        <div className="error__message" key={i}>
+          {message}
+        </div>
       ))}
     </>
   ) : null;

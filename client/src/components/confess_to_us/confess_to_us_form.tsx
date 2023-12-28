@@ -4,6 +4,7 @@ import Reason from "./reason";
 import Details from "./details";
 import validateSubject from "./validate/validate_subject";
 import validateReason from "./validate/validate_reason";
+import validateDetails from "./validate/validate_details";
 
 const ConfessToUsForm: React.FC = () => {
   const [subject, setSubject] = useState<string>("");
@@ -35,6 +36,7 @@ const ConfessToUsForm: React.FC = () => {
           <Details
             details={details}
             onChangeDetails={(value) => setDetails(value)}
+            validate={validateDetails}
           />
           <button className="form__button" type="submit" disabled>
             Confess
