@@ -1,4 +1,8 @@
 import ErrorMessage from "./error_message";
+import {
+  MisdemeanourKind,
+  MISDEMEANOURS,
+} from "../../types/misdemeanours.types";
 export interface ReasonProps {
   reason: string;
   onChangeReason: (e: string) => void;
@@ -19,8 +23,12 @@ const Reason: React.FC<ReasonProps> = ({
         onChange={(e) => onChangeReason(e.target.value)}
       >
         <option value="">--Select--</option>
-        <option value="misdemeanour"> Misdemeanour </option>
         <option value="talk"> I just want to talk </option>
+        {MISDEMEANOURS.map((item: MisdemeanourKind) => (
+          <option key={item} value={item}>
+            {item}
+          </option>
+        ))}
       </select>
       <ErrorMessage messages={validate(reason)} />
     </div>
