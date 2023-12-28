@@ -1,8 +1,14 @@
-interface SubjectProps {
+import ErrorMessage from "./error_message";
+export interface SubjectProps {
   subject: string;
   onChangeSubject: (e: string) => void;
+  validate: (name: string) => string[];
 }
-const Subject: React.FC<SubjectProps> = ({ subject, onChangeSubject }) => {
+const Subject: React.FC<SubjectProps> = ({
+  subject,
+  onChangeSubject,
+  validate,
+}) => {
   return (
     <>
       <div className="form__field">
@@ -14,6 +20,7 @@ const Subject: React.FC<SubjectProps> = ({ subject, onChangeSubject }) => {
           value={subject}
           onChange={(event) => onChangeSubject(event.target.value)}
         />
+        <ErrorMessage messages={validate(subject)} />
       </div>
     </>
   );

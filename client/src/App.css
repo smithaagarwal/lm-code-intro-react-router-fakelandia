@@ -76,3 +76,8 @@ textarea {
   width: 80%;
   margin: 5%;
 }
+.error__message {
+  font: 0.7em/1.5em "handwriting", cursive, sans-serif;
+  font-style: italic;
+  color: red;
+}
