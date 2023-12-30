@@ -81,3 +81,9 @@ textarea {
   font-style: italic;
   color: red;
 }
+.message__text {
+  text-align: center;
+  margin: auto;
+  font: 2em "handwriting", cursive, sans-serif;
+  padding: 5rem;
+}

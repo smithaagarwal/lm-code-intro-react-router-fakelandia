@@ -21,7 +21,9 @@ const SelectMisdemeanour: React.FC<SelectMisdemeanourProp> = ({
         <option value="">Filter</option>
         <option value="All">All</option>
         {MISDEMEANOURS.map((item) => (
-          <option value={item}>{item}</option>
+          <option key={item} value={item}>
+            {item}
+          </option>
         ))}
       </select>
     </>
