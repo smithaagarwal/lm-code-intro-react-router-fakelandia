@@ -50,6 +50,7 @@ const ConfessToUsForm: React.FC = () => {
         citizenId: Math.floor(Math.random() * 90000) + 10000,
         misdemeanour: reason as MisdemeanourKind,
         date: new Date().toJSON().slice(0, 10).split("-").reverse().join("/"),
+        isSelfAdded: true,
       };
       parentData.addMisdemeanour(newMisdemeanour);
       navigate("/Misdemeanours");
