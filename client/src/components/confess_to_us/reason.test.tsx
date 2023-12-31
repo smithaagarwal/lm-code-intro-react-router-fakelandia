@@ -21,7 +21,7 @@ describe("Reason component", () => {
   test("Given the required props, when the component is rendered, then the input text should be present", () => {
     //Arange
     const sampleReasonProps: ReasonProps = {
-      reason: "talk",
+      reason: "just-talk",
       onChangeReason: () => {},
       validate: (value: string) => [],
     };
