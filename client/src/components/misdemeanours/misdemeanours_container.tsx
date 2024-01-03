@@ -4,6 +4,7 @@ import MisdemeanoursList from "./misdemeanours_list";
 import useFetchData from "../../helper/use_fetch_data";
 import MisdemeanoursHeader from "./misdemeanours_header";
 import { ParentDataContext } from "../parent_data_provider";
+import { ShowLoading } from "./show_loading";
 
 export type MisdemeanoursResponse = Array<Misdemeanour>;
 export const MisdemeanoursContext = createContext<MisdemeanoursResponse>([]);
@@ -14,6 +15,7 @@ const MisdemeanoursContainer: React.FC = () => {
   const [filteredMisdemeanours, setFilteredMisdemeanours] =
     useState<MisdemeanoursResponse>([]);
   const [isFilterSelected, setIsFilterSelected] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   // const response = useFetchData(url);
   // setMisdemeanours(response.data)
   // console.log(response);
@@ -22,10 +24,12 @@ const MisdemeanoursContainer: React.FC = () => {
     const fetchData = async () => {
       try {
         if (parentData.misdemeanours.length === 0) {
+          setIsLoading(true);
           const response = await fetch(url);
           const json = await response.json();
           setMisdemeanours(json.misdemeanours);
           parentData.updateMisdemeanours(json.misdemeanours);
+          setIsLoading(false);
         } else {
           setMisdemeanours(parentData.misdemeanours);
         }
@@ -51,6 +55,7 @@ const MisdemeanoursContainer: React.FC = () => {
   return (
     <>
       <h2>Misdemeanours:</h2>
+      {isLoading && <ShowLoading />}
       <table>
         <tbody>
           <MisdemeanoursContext.Provider

@@ -87,3 +87,27 @@ textarea {
   font: 2em "handwriting", cursive, sans-serif;
   padding: 5rem;
 }
+.loading-text span {
+  position: relative;
+  opacity: 0;
+  animation: move-text-colour 1.5s forwards infinite;
+}
+
+@keyframes move-text-colour {
+  0% {
+    bottom: -.8em;
+    opacity: 1;
+    color: #ff4763;
+  }
+
+  40% {
+    bottom: .8em;
+    color: #ff6347;
+  }
+
+  60% {
+    bottom: 0;
+    opacity: 1;
+    color: #000;
+  }
+}
