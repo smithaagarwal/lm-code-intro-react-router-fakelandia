@@ -1,7 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import { Misdemeanour } from "../../types/misdemeanours.types";
 import MisdemeanoursList from "./misdemeanours_list";
-import useFetchData from "../../helper/use_fetch_data";
 import MisdemeanoursHeader from "./misdemeanours_header";
 import { ParentDataContext } from "../parent_data_provider";
 import { ShowLoading } from "./show_loading";
@@ -16,9 +15,6 @@ const MisdemeanoursContainer: React.FC = () => {
     useState<MisdemeanoursResponse>([]);
   const [isFilterSelected, setIsFilterSelected] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  // const response = useFetchData(url);
-  // setMisdemeanours(response.data)
-  // console.log(response);
   const parentData = useContext(ParentDataContext);
   useEffect(() => {
     const fetchData = async () => {

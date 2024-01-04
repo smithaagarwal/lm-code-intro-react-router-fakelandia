@@ -7,11 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 
 describe("Header component", () => {
   test("When the component is rendered, then the header text should be present", () => {
-    render(
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
-    );
+    render(<Header />, { wrapper: BrowserRouter });
     const someText = screen.getByText("Fakelandia Justice Department");
     expect(someText).toBeInTheDocument();
   });
