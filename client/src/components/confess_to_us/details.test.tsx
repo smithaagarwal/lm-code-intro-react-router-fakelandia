@@ -10,7 +10,7 @@ describe("Details component", () => {
     const sampleDetailsProps: DetailsProps = {
       details: "Here are the details",
       onChangeDetails: () => {},
-      validate: (value: string) => [],
+      validate: () => [],
     };
     //Act
     render(<Details {...sampleDetailsProps} />);

@@ -10,7 +10,7 @@ describe("Reason component", () => {
     const sampleReasonProps: ReasonProps = {
       reason: "",
       onChangeReason: () => {},
-      validate: (value: string) => [],
+      validate: () => [],
     };
     //Act
     render(<Reason {...sampleReasonProps} />);
@@ -23,7 +23,7 @@ describe("Reason component", () => {
     const sampleReasonProps: ReasonProps = {
       reason: "just-talk",
       onChangeReason: () => {},
-      validate: (value: string) => [],
+      validate: () => [],
     };
     //Act
     render(<Reason {...sampleReasonProps} />);

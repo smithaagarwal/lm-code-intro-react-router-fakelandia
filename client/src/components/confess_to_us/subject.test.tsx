@@ -10,7 +10,7 @@ describe("Subject component", () => {
     const sampleSubjectProps: SubjectProps = {
       subject: "",
       onChangeSubject: () => {},
-      validate: (value: string) => [],
+      validate: () => [],
     };
     //Act
     render(<Subject {...sampleSubjectProps} />);
@@ -23,7 +23,7 @@ describe("Subject component", () => {
     const sampleSubjectProps: SubjectProps = {
       subject: "talk",
       onChangeSubject: () => {},
-      validate: (value: string) => [],
+      validate: () => [],
     };
     //Act
     render(<Subject {...sampleSubjectProps} />);
