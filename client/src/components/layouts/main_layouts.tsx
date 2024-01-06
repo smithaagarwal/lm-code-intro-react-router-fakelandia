@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 const MainLayout = () => (
   <>
     <Header />
-    <main className="p-6" style={{ flex: "1" }}>
+    <main className="main" >
       <Outlet />
     </main>
     <Footer/>
