@@ -44,4 +44,13 @@ describe("ConfessToUsForm component ", () => {
       await screen.findByText(/Details is mandatory/i)
     ).toBeInTheDocument();
   });
+
+  test("shows the Confess button is present in the document", async () => {
+
+    
+    render(<BrowserRouter>
+      <ConfessToUsForm />
+    </BrowserRouter>);
+    expect(screen.getByRole('button',{name:/Confess/i}));
+});
 });
