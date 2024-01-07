@@ -1,8 +1,8 @@
 import Nav from "./nav";
 
 const Header = () => (
-  <header className="header has-background-primary is-flex is-align-items-center is-justify-content-center">
-    <h1 className="title">Fakelandia Justice Department</h1>
+  <header className="header">
+    <h1 className="header__title">Fakelandia Justice Department</h1>
     <Nav />
   </header>
 );

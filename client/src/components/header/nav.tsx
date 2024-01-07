@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 const Nav = () => (
   <nav
-    className="nav is-flex is-flex-grow-1 is-align-items-center"
+    className="navbar"
     style={{ width: "100%" }}
   >
     <ul

@@ -17,12 +17,51 @@
 
 .header {
   display: flex;
-  padding: 1rem 5rem;
-  background: #ffffff;
+  padding: 1.5rem 5rem;
+  align-items: center;
+  justify-content: center;
+  background: #D8C3A5;
+}
+
+.header__title {
+  color: #383837;
+  font-size:2rem ;
+  font-weight: bolder;
+}
+
+.navbar {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  background-color: #D8C3A5;
+  color: #383837;
+
 }
 
 nav a.active {
-  color: red;
+  color: #aa2319;
+}
+
+.navbar a:hover {
+  color: #EAE7DC;
+}
+
+nav a {
+  color:#383837
+}
+
+body {
+  background-color: #EAE7DC;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  text-align: center;
+  justify-content: center;
+  background: #D8C3A5;
+  color:whitesmoke
 }
 
 th,
