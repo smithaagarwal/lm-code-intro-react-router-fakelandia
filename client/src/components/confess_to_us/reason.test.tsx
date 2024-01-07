@@ -10,12 +10,14 @@ describe("Reason component", () => {
     const sampleReasonProps: ReasonProps = {
       reason: "",
       onChangeReason: () => {},
-      validate: () => [],
+      validate: () => ["Choose one of the options"],
     };
     //Act
     render(<Reason {...sampleReasonProps} />);
     const someLabelText = screen.getByText("Reason for contact:");
+    const someErrorText = screen.getByText("Choose one of the options");
     expect(someLabelText).toBeInTheDocument();
+    expect(someErrorText).toBeInTheDocument();
   });
 
   test("Given the required props, when the component is rendered, then the input text should be present", () => {

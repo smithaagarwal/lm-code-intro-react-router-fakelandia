@@ -42,26 +42,31 @@ const ConfessToUsForm: React.FC = () => {
       body: JSON.stringify(data),
     };
 
-    const url = "http://localhost:3000/api/confess";
-    const response = await fetch(url, requestOptions);
-    const json = await response.json();
-    if (json.success && !json.justTalked) {
-      const newMisdemeanour: Misdemeanour = {
-        citizenId: Math.floor(Math.random() * 90000) + 10000,
-        misdemeanour: reason as MisdemeanourKind,
-        date: new Date().toJSON().slice(0, 10).split("-").reverse().join("/"),
-        isSelfAdded: true,
-      };
-      parentData.addMisdemeanour(newMisdemeanour);
-      navigate("/Misdemeanours");
-    } else if (json.justTalked) {
-      setShowMessage(true);
-      setMessage("Thank you for talking to us!");
-    } else {
-      setShowMessage(true);
-      setMessage(
-        "Sorry, there was an error submitting the form.Please try again!"
-      );
+    try {
+      const url = "http://localhost:3000/api/confess";
+      const response = await fetch(url, requestOptions);
+      const json = await response.json();
+
+      if (json.success && !json.justTalked) {
+        const newMisdemeanour: Misdemeanour = {
+          citizenId: Math.floor(Math.random() * 90000) + 10000,
+          misdemeanour: reason as MisdemeanourKind,
+          date: new Date().toJSON().slice(0, 10).split("-").reverse().join("/"),
+          isSelfAdded: true,
+        };
+        parentData.addMisdemeanour(newMisdemeanour);
+        navigate("/Misdemeanours");
+      } else if (json.justTalked) {
+        setShowMessage(true);
+        setMessage("Thank you for talking to us!");
+      } else {
+        setShowMessage(true);
+        setMessage(
+          "Sorry, there was an error submitting the form.Please try again!"
+        );
+      }
+    } catch (e) {
+      console.error(e);
     }
   };
   return (
@@ -77,7 +82,7 @@ const ConfessToUsForm: React.FC = () => {
           welcome to contact us here too. Up to you!
         </p>
         {!showMessage && (
-          <form className="form" onSubmit={handleSubmit}>
+          <form className="form" role="confessToUsForm" onSubmit={handleSubmit}>
             <Subject
               subject={subject}
               onChangeSubject={(value) => setSubject(value)}

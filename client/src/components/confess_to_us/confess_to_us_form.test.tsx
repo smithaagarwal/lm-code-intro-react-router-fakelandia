@@ -1,4 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { vi } from "vitest";
 import "@testing-library/jest-dom";
 import { describe } from "node:test";
 import { BrowserRouter } from "react-router-dom";
@@ -46,11 +47,44 @@ describe("ConfessToUsForm component ", () => {
   });
 
   test("shows the Confess button is present in the document", async () => {
+    render(
+      <BrowserRouter>
+        <ConfessToUsForm />
+      </BrowserRouter>
+    );
+    expect(screen.getByRole("button", { name: /Confess/i }));
+  });
 
-    
-    render(<BrowserRouter>
-      <ConfessToUsForm />
-    </BrowserRouter>);
-    expect(screen.getByRole('button',{name:/Confess/i}));
-});
+  describe("Form Submit", () => {
+    test("test Confess Button is disabled", async () => {
+      const onSubmitMock = vi.fn();
+      const { container } = render(
+        <BrowserRouter>
+          <ConfessToUsForm />
+        </BrowserRouter>
+      );
+      container.onsubmit = onSubmitMock;
+      const submitButton = screen
+        .getAllByRole("button")
+        .find((button) => button.textContent === "Confess");
+      expect(submitButton).toBeInTheDocument();
+      expect(submitButton).toBeDisabled();
+    });
+  });
+
+  describe("Form Submit", () => {
+    test("test ConfessToUs form to check onSubmit function is called at button click", async () => {
+      const onSubmitMock = vi.fn();
+
+      const { container } = render(
+        <BrowserRouter>
+          <ConfessToUsForm />
+        </BrowserRouter>
+      );
+      container.onsubmit = onSubmitMock;
+      const form = screen.getByRole("confessToUsForm");
+      fireEvent.submit(form);
+      await waitFor(() => expect(onSubmitMock).toHaveBeenCalledTimes(1));
+    });
+  });
 });
